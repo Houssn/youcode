@@ -17,6 +17,10 @@ int main(){
 	printf("<10> la pow\n");
 	printf("choisie :");
 	scanf("%d",&nombre);
+	while(nombre<=0 || nombre>10){
+			printf("choisie :");
+	scanf("%d",&nombre);
+	} 
 	
 	switch(nombre){
 		case 1:printf("donner A:");
