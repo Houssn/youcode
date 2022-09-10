@@ -36,9 +36,9 @@ int main(){
     	scanf("%d",&num1);
 	}
         switch(num1){
-	case 1:printf("checken: %d dh",B=45);break;
-	case 2:printf("bef:%d dh",B=60);break;
-	case 3:printf("le bork:% dh",B=200);break;}
+	case 1:printf("plat de poulet: %d dh",B=45);break;
+	case 2:printf("plat de boeuf:%d dh",B=60);break;
+	case 3:printf("le plat de canard:% dh",B=200);break;}
 	   for(i=0;i<5;i++){
    printf("\n");
    }
