@@ -8,9 +8,9 @@ int main(){
 	C=0;
     int num1;
     printf("pour obtenir un jus d orange (12 dh) click sur 1.\n");
-    printf("pour obtenir un leau (2dh) click sur 2.\n");
-    printf("pour obtenir un tai (6 dh)click sur 3.\n");
-    printf("non mirci.\n");
+    printf("pour obtenir un l eau (2dh) click sur 2.\n");
+    printf("pour obtenir le tea (6 dh)click sur 3.\n");
+    printf("non merci.\n");
     printf(" donner votre choix  jus :");
     scanf("%d",&num1);
     while(num1<1 || num1>4){
@@ -26,9 +26,9 @@ int main(){
 	   for(i=0;i<5;i++){
    printf("\n");
    }
-	printf("checken 45dh click sur 1.\n");
-	printf("bef 60 dh click sur 2.\n");
-	printf("le bork 200 dh click sur 3.\n");
+	printf("plat de poulet 45dh click sur 1.\n");
+	printf("plat de boeuf 60 dh click sur 2.\n");
+	printf("le plat de canard 200 dh click sur 3.\n");
     printf("giv me your lunch or click sur 4 pour sortie :");
     scanf("%d",&num1);
         while(num1<1 || num1>4){
@@ -42,20 +42,20 @@ int main(){
 	   for(i=0;i<5;i++){
    printf("\n");
    }
-    printf("salad marrocain 45 dh click sure 1.\n");
-	printf("salad jinoise 60 dh click 2.\n");
-	printf("salad franses 200 dh click sur 3.\n");
+    printf("salad marrocain 20 dh click sure 1.\n");
+	printf("salad nicoise 60 dh click 2.\n");
+	printf("salad norvegienne a lavocat 60 dh click sur 3.\n");
 
-	    printf("giv me your salade or click sur 4 pour sortie :");
+	    printf("choix une salade ou click sur 4 pour sortie :");
     scanf("%d",&num1);
         while(num1<1 || num1>4){
     	printf("entrez un nombre entre 1 et 3:");
     	scanf("%d",&num1);
 	}
 	    switch(num1){
-	case 1:printf("salad marrocain: %d dh\n",C=45);break;
-	case 2:printf("salad jinoise:%d dh\n",C=60);break;
-	case 3:printf("salad franses:% dh\n",C=200);break;}
+	case 1:printf("salad marrocain: %d dh\n",C=20);break;
+	case 2:printf("salad nicoise:%d dh\n",C=60);break;
+	case 3:printf("salad norvegienne a lavocat:% dh\n",C=60);break;}
 
    for(i=0;i<5;i++){
    printf("\n");
