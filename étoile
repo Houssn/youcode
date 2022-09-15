@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<stdlib.h>
+void tri(int X, int line){int i,j;
+
+	for(i=1;i<=X;i++){
+		for(j=X-i;j>=1;j--)
+		        printf(" ");
+		for(j=1;j<=i+i-1;j++)
+		                     
+			printf("*");
+			printf("\n");
+		
+	}
+}
+
+int main(){
+	int X,i,j;
+	printf("donner X :");
+	scanf("%d",&X); 
+	int line = 1;
+	for(i=1;i<=X;i++){
+
+		tri(X, line);
+		
+	}
+
+}
