@@ -1,0 +1,55 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct etudient{
+	char nom[15];
+	char prenom[15];
+};
+struct ddn{
+	int j;
+	int M;
+	int N;
+};
+int age(int N,int d){
+return d-N;
+}
+
+
+
+int main(){
+	int i,N;
+	printf("donner le nombre de etudient:");
+
+	scanf("%d",&N);
+struct ddn *date_de_naissance = malloc(N*sizeof(int));
+struct etudient *etudients=malloc(N*sizeof(int));
+	for(i=1;i<N;i++){
+		printf("*********etudient%d*********\n",i+1);
+
+		printf("donner le nom:\n");
+		scanf("%s",&etudients[i].nom);
+		printf("donner le prenom:\n");
+		scanf("%s",&etudients[i].prenom);
+		printf("donner la date de naicence:\n");
+		printf("le jour:");
+		scanf("%d",&date_de_naissance[i].j);
+		printf("le moin:");
+		scanf("%d",&date_de_naissance[i].M);
+		printf("l anne:");
+		scanf("%d",&date_de_naissance[i].N);	
+	    int K=2022,ag;
+		ag=age(date_de_naissance[i].N,K);			
+	    printf("l age:%d\n",ag);
+    		}
+	for(i=1;i<N;i++){
+		printf("le nom:%s\n",etudients[i].nom);
+		printf("le prenom:%s\n",etudients[i].prenom);
+		printf("la date de naicence:\n\t%d\t/%d\t/\t%d\n",date_de_naissance[i].j,date_de_naissance[i].M,date_de_naissance[i].N);
+			int K=2022,ag;
+		ag=age(date_de_naissance[i].N,K);			
+	    printf("l age:%d\n",ag);
+
+        }
+
+return 0;
+}
