@@ -1,0 +1,217 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+typedef struct{
+int code;
+char nom[20];
+int quantite;
+double prix;
+float prixTTC;
+}produit;
+
+struct constant{
+    double val;
+};
+
+
+
+produit pro[100];
+//______________________________________________menu____________________________________________________________
+void Menu(){
+   printf("\n   *******MENU********");
+ printf("\n===========================");
+   printf("\n1-pour ajouter un produit.");
+   printf("\n2-pour ajouter plusier produit.");
+   printf("\n3-pour afiichie le produit.");
+   printf("\n4-pour rechercher un produit.");
+   printf("\n5-pour suprimer un produit.");
+   printf("\n6-pour vondu un produit.");
+   printf("\n7-pour sortie.");
+ printf("\n===========================");
+}
+
+static int n = 0;
+int i=0;
+//__________________________________________________________suprime______________________________________________
+void SuprimerProduit(){
+    int Ch;
+    int j;
+    printf("donner le code de produit.\n");
+    scanf("%d",&Ch);
+    for( i = 0; i < n; i++){
+        if(pro[i].code == Ch){
+            for(j=i; j<(n-1); j++){
+                    pro[j]=pro[j+1];
+
+                }
+        }
+    }
+    n--;
+}
+//__________________________________________FONCTION DE TRI PAR NOM_______________________________________________
+void sortname(produit pro[], int n)
+{
+    int i, j;
+    produit t;
+    for (i = 0; i < n - 1; i++)
+    {
+        for (j = 0; j < (n - 1 - i); j++)
+        {
+            if (strcasecmp(pro[j].nom, pro[j + 1].nom) > 0)
+            {
+                t = pro[j];
+                pro[j] = pro[j + 1];
+                pro[j + 1] = t;
+            }
+        }
+    }
+}
+//_________________________________________FONCTION DE TRI PAR PRIX___________________________________________
+void lister_prix(){
+    produit a;
+    int A,i,j;
+    for(i=0;i<A-1;i++){
+        for(j=1;j<A;j++){
+
+        if(pro[i].prix<pro[j].prix){
+            a=pro[i];
+            pro[i]=pro[j];
+            pro[j]=a;
+
+        }
+    }
+}
+
+}
+
+int main()
+{   int codeR;
+    int N,j,A;produit pro[100];
+    START:
+    Menu();
+   printf("\ndonner un choix.");
+   scanf("%d",&N);
+   while(N<1 || N>6)
+         {
+           printf("donner voutre choix:");
+            scanf("%d",&N);
+         }
+
+
+
+
+   switch(N){//____________________________________________________ajouter_______________________________________________________
+
+       case 1:
+           printf("donner le nombre de produit pour ajoute:");
+                    scanf("%d",&A);
+while(0>A || A>1){
+                    printf("donner le nombre de produit pour ajoute:");
+                    scanf("%d",&A);
+                }
+                   for(i=n;i<n+A;i++){
+                   printf("\n\n\tdonner les information de produits.");
+                   printf("\n\ndonner le nome de produit:");
+                   scanf("%s",pro[i].nom);
+                  printf("\ndonner le code de produit:");
+                   scanf("%d",&pro[i].code);
+                  printf("\ndonner le quantite de produit:");
+                   scanf("%d",&pro[i].quantite);
+                  printf("\ndonner le prix de produit:");
+                   scanf("%lf",&pro[i].prix);
+                  //printf("\ndonner le prixTTC de produit:%f",pro[i+1].prix+(pro[i+1].prix*15)/100);
+                  }
+                   n += A;
+				  system("cls");
+
+				  break;
+
+   		case 2:printf("donner le nombre de produit pour ajoute:");
+                    scanf("%d",&A);
+
+                   for(i=n;i<n+A;i++){
+                   printf("\n\n\tdonner les information de produits.");
+                   printf("\n\ndonner le nome de produit:");
+                   scanf("%s",pro[i].nom);
+                  printf("\ndonner le code de produit:");
+                   scanf("%d",&pro[i].code);
+                  printf("\ndonner le quantite de produit:");
+                   scanf("%d",&pro[i].quantite);
+                  printf("\ndonner le prix de produit:");
+                   scanf("%lf",&pro[i].prix);
+                  //printf("\ndonner le prixTTC de produit:%f",pro[i+1].prix+(pro[i+1].prix*15)/100);
+                  }
+                   n += A;
+				  system("cls");
+
+				  break;
+        case 3://_______________________________________________________________afichage______________________________________________
+                         //_______________________tri____________________________
+                        printf("tri par nom ou par prix.\n");
+                       int x;
+                       printf("entre 1 puor tri par nom.\n entre 2 pour tri par prix.\n");
+                       scanf("%d",&x);
+
+                       while(x<0 || x>2){
+                        printf("celle vous plait enrtre 1 OU 2:");
+                       scanf("%d",&x);
+                       }
+                       if(x=1){
+                        sortname(pro,n);
+                        for(j=0;j<n;j++){
+                         printf("\nLE NOM :%s",pro[j].nom);
+                         printf("\nLE CODE :%d",pro[j].code);
+                         printf("\nLE QUANTITE :%d",pro[j].quantite);
+                         printf("\nLE PRIX :%f",pro[j].prix);
+                         printf("\nLE PRIXTTC :%f\n",pro[j].prix+(pro[j].prix*15)/100);}
+                         }
+                         else {
+                             lister_prix();
+                        for(j=0;j<n;j++){
+                         printf("\nLE NOM :%s",pro[j].nom);
+                         printf("\nLE CODE :%d",pro[j].code);
+                         printf("\nLE QUANTITE :%d",pro[j].quantite);
+                         printf("\nLE PRIX :%f",pro[j].prix);
+                         printf("\nLE PRIXTTC :%f\n",pro[j].prix+(pro[j].prix*15)/100);}
+                              }
+
+
+                	getch();
+					system("cls");
+					break;
+
+        case 4://_______________________________________________cherche_________________________________________________________
+            printf("chercher sur un produit\n");
+            int z,low,high,mid;
+            printf("enter the value to find:\n");
+            scanf("%d" , &z);
+            low=0;
+            high=n-1;
+            mid=(low+high)/2;
+            while (low<=high){
+                if(pro[mid].code<z)
+                    low=mid+1;
+                else if (pro[mid].code==z)
+                {
+            printf("product number:%d=>%s\t%f\t%f\t%d\n" , mid+1,pro[mid].nom,pro[mid].prix,pro[mid].prix+(pro[mid].prix*15)/100,pro[mid].quantite);
+               break;
+                }
+                else
+                    high=mid-1;
+                mid=(low+high)/2;
+            }
+            if (low>high)
+            printf("this code %d is not exist in the list/n", z);
+
+            break;
+          case 5://_____________________________________________________suprimer un produit par code__________________________________
+              SuprimerProduit();
+
+          break;
+          case 6:
+            break;
+   }
+
+ goto START;
+    return 0;
+}
