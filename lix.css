@@ -1,0 +1,18 @@
+
+div{
+    text-align: center;
+    background-color: red;
+    
+}
+.buttonA { 
+    background-color: Green;  
+    border: none; 
+    color: white; 
+    padding: 12px 70px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    margin: 2px 6px; 
+    cursor: pointer; 
+    font-size:20px; 
+    }
